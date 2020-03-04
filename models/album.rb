@@ -38,10 +38,9 @@ end
   end
 
   def update
-    sql = "UPDATE albums SET (genre,artist_id) VALUES ($1,$2) WHERE id = $3"
+    sql = "UPDATE albums SET (genre,artist_id) = ($1,$2) WHERE id = $3"
     values = [@genre,@artist_id,@id]
     SqlRunner.run(sql,values)
   end
-
 
 end
